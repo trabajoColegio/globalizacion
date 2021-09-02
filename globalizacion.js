@@ -9,12 +9,20 @@ $container = d.querySelectorAll(".container");
 
 let selected = undefined;
 
+pato = true;
+
 $container[0].classList.add("visible")
 $navBtn[0].classList.add("color-naranja");
 
 d.addEventListener("click", e => {
+  
   $navBtn.forEach((el , index) => {
     if (e.target === el || e.target === $navBtnDiv[index]) {
+      if (pato) {
+    $container[0].classList.remove("visible")
+$navBtn[0].classList.remove("color-naranja");
+pato = false
+  }
       if (selected !== undefined) {
         $container[selected].classList.remove("visible");
       }
